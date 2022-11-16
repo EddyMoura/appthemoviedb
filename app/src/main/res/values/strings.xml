@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">AppTheMovieDB</string>
+    <string name="now_playing_title">Now Playing</string>
+    <string name="coming_soon_title">Coming Soon</string>
+
+    <!-- App Menu -->
+    <string name="app_menu_movies">Movies</string>
+    <string name="app_menu_favorites">Favorites</string>
+
+    <string name="menu_search">Search</string>
+    <string name="menu_sort">Sort</string>
+
+    <string name="view_pager_screen_title">The Movie DB</string>
+    <string name="now_playing_screen_title">Now Playing</string>
+    <string name="coming_soon_screen_title">Coming Soon</string>
+    <string name="favorites_screen_title">Favorites</string>
+    <string name="characters_no_results_found">No results found</string>
+
+    <string name="details_comics_category">Comics</string>
+
+    <string name="favorites_no_products_in_the_list">No heroes in the favorite list</string>
+
+</resources>
