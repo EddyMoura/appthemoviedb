@@ -1,5 +1,6 @@
 package com.example.appthemoviedb.data.framework.response
 
+import com.example.appthemoviedb.domain.model.Movie
 import com.google.gson.annotations.SerializedName
 
 data class MovieResponse(
@@ -32,3 +33,16 @@ data class MovieResponse(
     @SerializedName("vote_count")
     val voteCount: Int
 )
+
+fun MovieResponse.toMovie(): Movie {
+    return Movie(
+        posterPath = posterPath,
+        title = title,
+        id = id,
+        backdropPath = backdropPath,
+        overview = overview,
+        releaseDate = releaseDate,
+        voteAverage = voteAverage,
+        genres = genreIds,
+    )
+}

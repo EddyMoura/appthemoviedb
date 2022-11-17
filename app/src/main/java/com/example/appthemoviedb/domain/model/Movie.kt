@@ -2,13 +2,13 @@ package com.example.appthemoviedb.domain.model
 
 data class Movie(
     val posterPath: String?,
-//    val backdropPath: String?,
-//    val overview: String?,
-//    val releaseDate: String?,
+    val backdropPath: String?,
+    val overview: String?,
+    val releaseDate: String?,
     val id: Int,
     val title: String,
-//    val voteAverage: Double,
-//    val genres: List<Int>,
+    val voteAverage: Double,
+    val genres: List<Int>,
 ) {
 
     fun getFullPosterPath() =
