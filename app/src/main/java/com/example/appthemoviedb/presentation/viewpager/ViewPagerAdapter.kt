@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.appthemoviedb.presentation.movienowplaying.NowPlayingFragment
+import com.example.appthemoviedb.presentation.moviesnowplaying.NowPlayingFragment
 import com.example.appthemoviedb.presentation.moviescomingsoon.ComingSoonFragment
 
 class ViewPagerAdapter(

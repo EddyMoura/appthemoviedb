@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!-- The Movie colors -->
     <color name="light_gradient">#ED1941</color>
     <color name="fill_gradient">#F3506F</color>
     <color name="the_red">#ED1941</color>

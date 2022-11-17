@@ -1,8 +1,15 @@
 plugins {
     id 'com.android.application'
+    id 'kotlin-kapt'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
 }
+
+apply from: '../config/detekt/detekt.gradle'
+
+def apikeyPropertiesFile = rootProject.file("apikey.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 
 android {
     namespace 'com.example.appthemoviedb'
@@ -16,6 +23,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "API_KEY", apikeyProperties['API_KEY']
+        buildConfigField "String", "BASE_URL", '"https://api.themoviedb.org/3/"'
     }
 
     buildTypes {
@@ -39,7 +48,7 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -51,4 +60,33 @@ dependencies {
     def nav_version = '2.5.3'
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Dagger Hilt
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
+
+    // OkHttp
+    api(platform("com.squareup.okhttp3:okhttp-bom:4.9.0"))
+    api("com.squareup.okhttp3:okhttp")
+    api("com.squareup.okhttp3:logging-interceptor")
+
+    // Retrofit
+    def retrofit_version = '2.9.0'
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    //Gson
+    api 'com.google.code.gson:gson:2.9.0'
+
+    //Javax Inject
+    implementation "javax.inject:javax.inject:1"
+
+    // Coroutines core
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+
+    //Javax Inject
+    implementation "javax.inject:javax.inject:1"
+
+    // Paging3
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
 }
