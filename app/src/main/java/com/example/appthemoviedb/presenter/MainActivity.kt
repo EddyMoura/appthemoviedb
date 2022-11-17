@@ -1,4 +1,4 @@
-package com.example.appthemoviedb.presentation
+package com.example.appthemoviedb.presenter
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

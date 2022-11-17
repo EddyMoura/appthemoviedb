@@ -1,4 +1,4 @@
-package com.example.appthemoviedb.presentation.moviesnowplaying
+package com.example.appthemoviedb.presenter.moviesnowplaying
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

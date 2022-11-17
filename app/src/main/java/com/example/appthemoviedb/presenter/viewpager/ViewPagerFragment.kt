@@ -1,4 +1,4 @@
-package com.example.appthemoviedb.presentation.viewpager
+package com.example.appthemoviedb.presenter.viewpager
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/viewPagerFragment"
-        android:name="com.example.appthemoviedb.presentation.viewpager.ViewPagerFragment"
+        android:name="com.example.appthemoviedb.presenter.viewpager.ViewPagerFragment"
         android:label="@string/view_pager_screen_title"
         tools:layout="@layout/fragment_view_pager" />
 </navigation>

@@ -1,11 +1,11 @@
-package com.example.appthemoviedb.presentation.viewpager
+package com.example.appthemoviedb.presenter.viewpager
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.appthemoviedb.presentation.moviesnowplaying.NowPlayingFragment
-import com.example.appthemoviedb.presentation.moviescomingsoon.ComingSoonFragment
+import com.example.appthemoviedb.presenter.moviesnowplaying.NowPlayingFragment
+import com.example.appthemoviedb.presenter.moviescomingsoon.ComingSoonFragment
 
 class ViewPagerAdapter(
     fragmentManager: FragmentManager,
