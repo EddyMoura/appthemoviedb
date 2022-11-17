@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/nowPlayingFragment"
-        android:name="com.example.appthemoviedb.presenter.moviesnowplaying.NowPlayingFragment"
+        android:name="com.example.appthemoviedb.presenter.moviesnowplaying.NowPlayingMoviesFragment"
         android:label="@string/now_playing_screen_title"
-        tools:layout="@layout/fragment_now_playing" />
+        tools:layout="@layout/fragment_now_playing_movies" />
 </navigation>

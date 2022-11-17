@@ -27,7 +27,7 @@
         android:id="@+id/fragment_view_Pager"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/fragment_view_pager_tab_layout"
         app:layout_constraintStart_toStartOf="@id/fragment_view_pager_tab_layout"

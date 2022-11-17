@@ -4,8 +4,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.appthemoviedb.presenter.moviesnowplaying.NowPlayingFragment
-import com.example.appthemoviedb.presenter.moviescomingsoon.ComingSoonFragment
+import com.example.appthemoviedb.presenter.moviesnowplaying.NowPlayingMoviesFragment
+import com.example.appthemoviedb.presenter.moviescomingsoon.ComingSoonMoviesFragment
 
 class ViewPagerAdapter(
     fragmentManager: FragmentManager,
@@ -21,8 +21,8 @@ class ViewPagerAdapter(
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> NowPlayingFragment()
-            else -> ComingSoonFragment()
+            0 -> NowPlayingMoviesFragment()
+            else -> ComingSoonMoviesFragment()
         }
     }
 }
