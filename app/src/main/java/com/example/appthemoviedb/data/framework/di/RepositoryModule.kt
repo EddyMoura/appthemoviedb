@@ -1,10 +1,14 @@
 package com.example.appthemoviedb.data.framework.di
 
-import com.example.appthemoviedb.data.framework.MoviesRepositoryImpl
-import com.example.appthemoviedb.data.framework.remote.RetrofitMoviesDataSource
+import com.example.appthemoviedb.data.framework.ComingSoonMoviesRepositoryImpl
+import com.example.appthemoviedb.data.framework.NowPlayingMoviesRepositoryImpl
+import com.example.appthemoviedb.data.framework.remote.RetrofitComingSoonMoviesDataSource
+import com.example.appthemoviedb.data.framework.remote.RetrofitNowPlayingMoviesDataSource
 import com.example.appthemoviedb.data.framework.response.DataContainerResponse
-import com.example.appthemoviedb.domain.repository.MoviesRemoteDataSource
-import com.example.appthemoviedb.domain.repository.MoviesRepository
+import com.example.appthemoviedb.domain.repository.ComingSoonMoviesRemoteDataSource
+import com.example.appthemoviedb.domain.repository.ComingSoonMoviesRepository
+import com.example.appthemoviedb.domain.repository.NowPlayingMoviesRemoteDataSource
+import com.example.appthemoviedb.domain.repository.NowPlayingMoviesRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -15,10 +19,18 @@ import dagger.hilt.components.SingletonComponent
 interface RepositoryModule {
 
     @Binds
-    fun bindMovieRepository(repository: MoviesRepositoryImpl): MoviesRepository
+    fun bindNowPlayingMoviesRepository(repository: NowPlayingMoviesRepositoryImpl): NowPlayingMoviesRepository
 
     @Binds
-    fun bindRemoteDataSource(
-        dataSource: RetrofitMoviesDataSource
-    ): MoviesRemoteDataSource<DataContainerResponse>
+    fun bindComingSoonRepository(repository: ComingSoonMoviesRepositoryImpl): ComingSoonMoviesRepository
+
+    @Binds
+    fun bindNowPlayingMoviesRemoteDataSource(
+        dataSource: RetrofitNowPlayingMoviesDataSource
+    ): NowPlayingMoviesRemoteDataSource<DataContainerResponse>
+
+    @Binds
+    fun bindComingSoonMoviesRemoteDataSource(
+        dataSource: RetrofitComingSoonMoviesDataSource
+    ): ComingSoonMoviesRemoteDataSource<DataContainerResponse>
 }

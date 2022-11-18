@@ -11,4 +11,9 @@ interface MovieApi {
         @Query("page") page: Int
     ): DataContainerResponse
 
+    @GET("movie/upcoming")
+    suspend fun getComingSoonMovies(
+        @Query("page") page: Int
+    ): DataContainerResponse
+
 }

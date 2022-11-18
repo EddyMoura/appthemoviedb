@@ -1,6 +1,7 @@
 package com.example.appthemoviedb.domain.repository
 
-interface MoviesRemoteDataSource<T> {
+interface NowPlayingMoviesRemoteDataSource<T> {
 
     suspend fun fetchNowPlayingMovies(page: Int): T
+
 }
