@@ -18,4 +18,4 @@ The design adopted follows the MVVM with clean architecture design patterns. It 
 
 - [Retrofit2](https://square.github.io/retrofit/): Used to call the [The Movie Database API](https://www.themoviedb.org/);
 - [Dagger - Hilt](https://dagger.dev/hilt/gradle-setup): Used for dependency injection.
-- [Coil](https://coil-kt.github.io/coil/):  Helped with image display. 
+- [Glie](https://github.com/bumptech/glide):  Helped with image display. 
