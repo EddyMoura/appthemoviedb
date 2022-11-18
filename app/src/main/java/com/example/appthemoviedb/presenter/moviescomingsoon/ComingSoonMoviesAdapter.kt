@@ -1,17 +1,20 @@
 package com.example.appthemoviedb.presenter.moviescomingsoon
 
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import com.example.appthemoviedb.domain.model.Movie
 
-class ComingSoonMoviesAdapter : ListAdapter<Movie, ComingSoonMoviesViewHolder>(differCallback) {
+class ComingSoonMoviesAdapter :
+    PagingDataAdapter<Movie, ComingSoonMoviesViewHolder>(differCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComingSoonMoviesViewHolder {
         return ComingSoonMoviesViewHolder.create(parent)
     }
 
     override fun onBindViewHolder(holder: ComingSoonMoviesViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        getItem(position)?.let {
+            holder.bind(it)
+        }
     }
 
     companion object {
