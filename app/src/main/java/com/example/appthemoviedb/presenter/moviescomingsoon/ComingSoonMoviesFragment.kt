@@ -30,18 +30,6 @@ class ComingSoonMoviesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initComingSoonMoviesAdapter()
-
-        @Suppress("MaxLineLength")
-        moviesComingSoonMoviesAdapter.submitList(
-            listOf(
-                Movie("https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg", 0, "Black Panther: Wakanda Forever"),
-                Movie("https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg", 0, "Black Panther: Wakanda Forever"),
-                Movie("https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg", 0, "Black Panther: Wakanda Forever"),
-                Movie("https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg", 0, "Black Panther: Wakanda Forever"),
-                Movie("https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg", 0, "Black Panther: Wakanda Forever"),
-
-                )
-        )
     }
 
     private fun initComingSoonMoviesAdapter() {

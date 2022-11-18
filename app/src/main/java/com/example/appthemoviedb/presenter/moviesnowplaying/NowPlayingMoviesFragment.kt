@@ -5,14 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.example.appthemoviedb.databinding.FragmentNowPlayingMoviesBinding
 import com.example.appthemoviedb.domain.model.Movie
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class NowPlayingMoviesFragment : Fragment() {
 
     private var _binding: FragmentNowPlayingMoviesBinding? = null
     private val binding: FragmentNowPlayingMoviesBinding get() = _binding!!
+
+    private val viewModel: NowPlayingMoviesViewModel by viewModels()
 
     private lateinit var moviesNowPlayingMoviesAdapter: NowPlayingMoviesAdapter
 
@@ -31,26 +39,21 @@ class NowPlayingMoviesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initNowPlayingMoviesAdapter()
 
-        @Suppress("MaxLineLength")
-        moviesNowPlayingMoviesAdapter.submitList(
-            listOf(
-                Movie("https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg", 0, "Black Panther: Wakanda Forever"),
-                Movie("https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg", 0, "Black Panther: Wakanda Forever"),
-                Movie("https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg", 0, "Black Panther: Wakanda Forever"),
-                Movie("https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg", 0, "Black Panther: Wakanda Forever"),
-                Movie("https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg", 0, "Black Panther: Wakanda Forever"),
-
-            )
-        )
-
+        lifecycleScope.launch {
+            viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.nowPlayingMoviesPagingData().collect() { pagingData ->
+                    moviesNowPlayingMoviesAdapter.submitData(pagingData)
+                }
+            }
+        }
     }
 
     private fun initNowPlayingMoviesAdapter() {
         moviesNowPlayingMoviesAdapter = NowPlayingMoviesAdapter()
         with(binding.recyclerMoviesNowPlaying) {
+            scrollToPosition(0)
             setHasFixedSize(true)
             adapter = moviesNowPlayingMoviesAdapter
         }
     }
-
 }

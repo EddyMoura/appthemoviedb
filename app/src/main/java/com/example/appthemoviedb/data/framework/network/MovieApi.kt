@@ -10,4 +10,5 @@ interface MovieApi {
     suspend fun getNowPlayingMovies(
         @Query("page") page: Int
     ): DataContainerResponse
+
 }

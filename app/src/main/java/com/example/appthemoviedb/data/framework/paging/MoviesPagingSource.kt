@@ -6,35 +6,41 @@ import com.example.appthemoviedb.data.framework.response.DataContainerResponse
 import com.example.appthemoviedb.data.framework.response.toMovie
 import com.example.appthemoviedb.domain.model.Movie
 import com.example.appthemoviedb.domain.repository.MoviesRemoteDataSource
+import retrofit2.HttpException
+import java.io.IOException
 
 class MoviesPagingSource(
-    private val remoteDataSource: MoviesRemoteDataSource<DataContainerResponse>
+    private val remoteDataSource: MoviesRemoteDataSource<DataContainerResponse>,
 ) : PagingSource<Int, Movie>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Movie> {
         return try {
-            val pageIndex = params.key ?: MOVIE_PAGE_INDEX
+            val pageIndex = params.key ?: MOVIE_STARTING_PAGE_INDEX
             val response = remoteDataSource.fetchNowPlayingMovies(pageIndex)
             val movies = response.results.map { it.toMovie() }
 
             LoadResult.Page(
                 data = movies,
-                prevKey = if (pageIndex == MOVIE_PAGE_INDEX) null else pageIndex - 1,
+                prevKey = if (pageIndex == MOVIE_STARTING_PAGE_INDEX) null else pageIndex - 1,
                 nextKey = if (movies.isEmpty()) null else pageIndex + 1
             )
-        } catch (exception: Exception) {
+        } catch (exception: IOException) {
+            // IOException for network failures.
             LoadResult.Error(exception)
+        } catch (e: HttpException) {
+            // HttpException for any non-2xx HTTP status codes.
+            LoadResult.Error(e)
         }
     }
 
     override fun getRefreshKey(state: PagingState<Int, Movie>): Int? {
         return state.anchorPosition?.let {
-            state.closestPageToPosition(it)?.prevKey?.plus(MOVIE_PAGE_INDEX)
-                ?: state.closestPageToPosition(it)?.nextKey?.minus(MOVIE_PAGE_INDEX)
+            state.closestPageToPosition(it)?.prevKey?.plus(1)
+                ?: state.closestPageToPosition(it)?.nextKey?.minus(1)
         }
     }
 
     companion object {
-        private const val MOVIE_PAGE_INDEX = 1
+        private const val MOVIE_STARTING_PAGE_INDEX = 1
     }
 }

@@ -1,8 +1,8 @@
 package com.example.appthemoviedb.data.framework.di
 
 import com.example.appthemoviedb.BuildConfig
-import com.example.appthemoviedb.data.framework.network.interceptor.AuthorizationInterceptor
 import com.example.appthemoviedb.data.framework.network.MovieApi
+import com.example.appthemoviedb.data.framework.network.interceptor.AuthorizationInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,6 +11,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
 import java.util.concurrent.TimeUnit
 
 @Module
@@ -67,4 +68,5 @@ object NetworkModule {
             .build()
             .create(MovieApi::class.java)
     }
+
 }
