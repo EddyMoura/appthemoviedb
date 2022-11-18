@@ -1,4 +1,4 @@
-package com.example.appthemoviedb.presentation.favorites
+package com.example.appthemoviedb.presenter.favorites
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

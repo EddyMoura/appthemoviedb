@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.viewpager.ViewPagerFragment">
+    tools:context=".presenter.viewpager.ViewPagerFragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/fragment_view_pager_tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_margin="20dp"
         android:background="@drawable/tab_brackgroud"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +27,7 @@
         android:id="@+id/fragment_view_Pager"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/fragment_view_pager_tab_layout"
         app:layout_constraintStart_toStartOf="@id/fragment_view_pager_tab_layout"

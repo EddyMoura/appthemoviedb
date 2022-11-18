@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/comingSoonFragment"
-        android:name="com.example.appthemoviedb.presentation.moviescomingsoon.ComingSoonFragment"
+        android:name="com.example.appthemoviedb.presenter.moviescomingsoon.ComingSoonMoviesFragment"
         android:label="@string/coming_soon_screen_title"
-        tools:layout="@layout/fragment_coming_soon" />
+        tools:layout="@layout/fragment_coming_soon_movies" />
 </navigation>

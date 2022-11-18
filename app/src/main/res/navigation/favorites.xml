@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.example.appthemoviedb.presentation.favorites.FavoritesFragment"
+        android:name="com.example.appthemoviedb.presenter.favorites.FavoritesFragment"
         android:label="@string/favorites_screen_title"
         tools:layout="@layout/fragment_favorites" />
 </navigation>

@@ -10,6 +10,10 @@
     <string name="menu_search">Search</string>
     <string name="menu_sort">Sort</string>
 
+    <string name="error_loading_movies">Error when trying to load Movies</string>
+    <string name="error_loading_more_try_again">Error when trying to load next page. Try again.</string>
+    <string name="common_try_again">TRY AGAIN</string>
+
     <string name="view_pager_screen_title">The Movie DB</string>
     <string name="now_playing_screen_title">Now Playing</string>
     <string name="coming_soon_screen_title">Coming Soon</string>
