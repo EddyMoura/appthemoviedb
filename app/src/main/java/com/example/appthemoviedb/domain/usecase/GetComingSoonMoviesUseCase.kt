@@ -9,17 +9,21 @@ import com.example.appthemoviedb.domain.usecase.base.PagingUseCase
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class GetComingSoonMoviesUseCase @Inject constructor(
-    private val moviesRepository: ComingSoonMoviesRepository
-) : PagingUseCase<GetComingSoonMoviesUseCase.GetMoviesParams, Movie>() {
+interface GetComingSoonMoviesUseCase {
+    operator fun invoke(params: GetMoviesParams): Flow<PagingData<Movie>>
 
-    override fun createFlowObservable(params: GetMoviesParams): Flow<PagingData<Movie>> {
+    data class GetMoviesParams(val pagingConfig: PagingConfig)
+}
+
+class GetComingSoonMoviesUseCaseImpl @Inject constructor(
+    private val moviesRepository: ComingSoonMoviesRepository
+) : PagingUseCase<GetComingSoonMoviesUseCase.GetMoviesParams, Movie>(), GetComingSoonMoviesUseCase {
+
+    override fun createFlowObservable(params: GetComingSoonMoviesUseCase.GetMoviesParams): Flow<PagingData<Movie>> {
         return Pager(
             config = params.pagingConfig
         ) {
             moviesRepository.getComingSoonMovies()
         }.flow
     }
-
-    data class GetMoviesParams(val pagingConfig: PagingConfig)
 }
