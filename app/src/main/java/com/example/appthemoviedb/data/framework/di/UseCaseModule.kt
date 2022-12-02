@@ -1,9 +1,6 @@
 package com.example.appthemoviedb.data.framework.di
 
-import com.example.appthemoviedb.domain.usecase.GetComingSoonMoviesUseCase
-import com.example.appthemoviedb.domain.usecase.GetComingSoonMoviesUseCaseImpl
-import com.example.appthemoviedb.domain.usecase.GetNowPlayingMoviesUseCase
-import com.example.appthemoviedb.domain.usecase.GetNowPlayingMoviesUseCaseImpl
+import com.example.appthemoviedb.domain.usecase.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -18,4 +15,7 @@ interface UseCaseModule {
 
     @Binds
     fun bindGetNowPlayingMoviesUseCase(useCaseImpl: GetNowPlayingMoviesUseCaseImpl): GetNowPlayingMoviesUseCase
+
+    @Binds
+    fun bindGetMovieDetails(useCaseImpl: GetMovieDetailsUseCase): GetMovieDetailsUseCase
 }

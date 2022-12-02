@@ -4,7 +4,6 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.example.appthemoviedb.domain.model.Movie
-import com.example.appthemoviedb.domain.repository.ComingSoonMoviesRepository
 import com.example.appthemoviedb.domain.usecase.base.PagingUseCase
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
