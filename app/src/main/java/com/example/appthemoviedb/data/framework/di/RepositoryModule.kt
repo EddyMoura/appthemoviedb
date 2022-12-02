@@ -27,10 +27,10 @@ interface RepositoryModule {
     @Binds
     fun bindNowPlayingMoviesRemoteDataSource(
         dataSource: RetrofitNowPlayingMoviesDataSource
-    ): NowPlayingMoviesRemoteDataSource<DataContainerResponse>
+    ): NowPlayingMoviesRemoteDataSource
 
     @Binds
     fun bindComingSoonMoviesRemoteDataSource(
         dataSource: RetrofitComingSoonMoviesDataSource
-    ): ComingSoonMoviesRemoteDataSource<DataContainerResponse>
+    ): ComingSoonMoviesRemoteDataSource
 }

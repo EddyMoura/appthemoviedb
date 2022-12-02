@@ -9,7 +9,7 @@ import com.example.appthemoviedb.domain.repository.NowPlayingMoviesRepository
 import javax.inject.Inject
 
 class NowPlayingMoviesRepositoryImpl @Inject constructor(
-    private val remoteDataSource: NowPlayingMoviesRemoteDataSource<DataContainerResponse>
+    private val remoteDataSource: NowPlayingMoviesRemoteDataSource
 ) : NowPlayingMoviesRepository {
 
     override fun getNowPlayingMovies(): PagingSource<Int, Movie> {

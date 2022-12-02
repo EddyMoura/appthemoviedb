@@ -34,7 +34,7 @@ data class MovieResponse(
     val voteCount: Int
 )
 
-fun MovieResponse.toMovie(): Movie {
+fun MovieResponse.toMovieModel(): Movie {
     return Movie(
         posterPath = posterPath,
         title = title,
