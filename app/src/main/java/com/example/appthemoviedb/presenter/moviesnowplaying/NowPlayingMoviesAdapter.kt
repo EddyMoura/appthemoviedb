@@ -3,14 +3,16 @@ package com.example.appthemoviedb.presenter.moviesnowplaying
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import com.example.appthemoviedb.domain.model.Movie
+import com.example.appthemoviedb.presenter.util.onMovieItemClick
 
-class NowPlayingMoviesAdapter :
+class NowPlayingMoviesAdapter(
+    private val onItemClick: onMovieItemClick
+) :
     PagingDataAdapter<Movie, NowPlayingMoviesViewHolder>(differCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NowPlayingMoviesViewHolder {
-        return NowPlayingMoviesViewHolder.create(parent)
+        return NowPlayingMoviesViewHolder.create(parent, onItemClick)
     }
 
     override fun onBindViewHolder(holder: NowPlayingMoviesViewHolder, position: Int) {

@@ -1,5 +1,6 @@
 package com.example.appthemoviedb.data.framework.response
 
+import com.example.appthemoviedb.domain.model.Genre
 import com.example.appthemoviedb.domain.model.Movie
 import com.google.gson.annotations.SerializedName
 
@@ -46,3 +47,33 @@ fun MovieResponse.toMovieModel(): Movie {
         genres = genreIds,
     )
 }
+
+
+//fun List<Int>.toGenre(genres: List<Genre>): List<Genre> {
+//    return this.mapNotNull { genreId ->
+//        genres.find {
+//            it.id == genreId
+//        }
+//    }
+//}
+
+//fun MovieResponse.toMovieModel(genres: List<Genre>): Movie {
+//    return Movie(
+//        posterPath = posterPath,
+//        title = title,
+//        id = id,
+//        backdropPath = backdropPath,
+//        overview = overview,
+//        releaseDate = releaseDate,
+//        voteAverage = voteAverage,
+//        genres = genreIds.toGenre(genres).map { it.name },
+//    )
+//}
+//
+//fun List<Int>.toGenre(genres: List<Genre>): List<Genre> {
+//    return this.mapNotNull { genreId ->
+//        genres.find {
+//            it.id == genreId
+//        }
+//    }
+//}

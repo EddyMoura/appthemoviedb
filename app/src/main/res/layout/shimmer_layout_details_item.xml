@@ -1,0 +1,218 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_detail_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".presenter.moviedetails.DetailMoviesFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ViewFlipper
+            android:id="@+id/flipper_detail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/detail_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/detail_item_image_backdrop"
+                    android:layout_width="0dp"
+                    android:layout_height="262dp"
+                    android:background="@color/medium_grey"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/detail_item_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/medium_grey"
+                    android:layout_margin="16dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:maxLines="1"
+                    android:textColor="@color/the_blue_dark5"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="@id/detail_item_image_backdrop"
+                    app:layout_constraintStart_toStartOf="@+id/detail_item_image_backdrop"
+                    app:layout_constraintTop_toBottomOf="@id/detail_item_image_backdrop"
+                    tools:text="John Wick 3: Parabellum" />
+
+                <TextView
+                    android:id="@+id/detail_item_voteAverage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins_bold"
+                    android:maxLines="1"
+                    android:textColor="@color/the_red"
+                    android:background="@color/medium_grey"
+                    android:textSize="32sp"
+                    app:layout_constraintStart_toStartOf="@id/detail_item_title"
+                    app:layout_constraintTop_toBottomOf="@id/detail_item_title"
+                    tools:text="4.6" />
+
+                <TextView
+                    android:id="@+id/detail_item_runtime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/medium_grey"
+                    android:layout_marginStart="6dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:maxLines="1"
+                    android:textColor="@color/the_blue_dark5"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@id/detail_item_voteAverage"
+                    app:layout_constraintTop_toBottomOf="@id/detail_item_title"
+                    tools:text="2hr 10m" />
+
+                <TextView
+                    android:id="@+id/detail_item_textseparation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:maxLines="1"
+                    android:text="|"
+                    android:textColor="@color/the_blue_dark5"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@id/detail_item_runtime"
+                    app:layout_constraintTop_toBottomOf="@id/detail_item_title" />
+
+                <TextView
+                    android:id="@+id/detail_item_textr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:maxLines="1"
+                    android:text="R"
+                    android:textColor="@color/the_blue_dark5"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@id/detail_item_textseparation"
+                    app:layout_constraintTop_toBottomOf="@id/detail_item_title" />
+
+                <TextView
+                    android:id="@+id/detail_item_genres"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:background="@color/medium_grey"
+                    android:maxLines="1"
+                    android:textColor="@color/the_blue_dark5"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@id/detail_item_voteAverage"
+                    app:layout_constraintTop_toBottomOf="@id/detail_item_runtime"
+                    tools:text="Action, Crime, Thriller" />
+
+                <View
+                    android:id="@+id/detail_item_divider01"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/the_blue_dark_30"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/detail_item_voteAverage" />
+
+                <TextView
+                    android:id="@+id/detail_item_synopsis_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Synopsis"
+                    android:textColor="@color/the_blue_dark5"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/detail_item_image_backdrop"
+                    app:layout_constraintTop_toBottomOf="@id/detail_item_divider01" />
+
+                <TextView
+                    android:id="@+id/detail_item_overview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:background="@color/medium_grey"
+                    android:maxLines="4"
+                    android:textColor="@color/the_blue_dark5"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@id/detail_item_synopsis_title"
+                    app:layout_constraintStart_toStartOf="@id/detail_item_synopsis_title"
+                    app:layout_constraintTop_toBottomOf="@id/detail_item_synopsis_title"
+                    tools:text="With the untimely death of his beloved wife still bitter in his mouth, John Wick, the expert former assassin, receives one final gift from her--a precious keepsake to help John find a new meaning in life now that she is gone. But when the arrogant Russian mob prince, Iosef Tarasov, and his men pay Wick a rather unwelcome visit to rob him of his prized 1969 Mustang and his wife's present, the legendary hitman will be forced to unearth his meticulously concealed identity. Blind with revenge, John will immediately unleash a carefully orchestrated maelstrom of destruction against the sophisticated kingpin, Viggo Tarasov, and his family, who are fully aware of his lethal capacity. Now, only blood can quench the boogeyman's thirst for retribution." />
+
+                <TextView
+                    android:id="@+id/detail_item_showmore"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/poppins"
+                    android:text="Show More"
+                    android:textColor="@color/the_blue"
+                    app:layout_constraintEnd_toEndOf="@id/detail_item_overview"
+                    app:layout_constraintTop_toBottomOf="@id/detail_item_overview" />
+
+                <View
+                    android:id="@+id/detail_item_divider02"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/the_blue_dark_30"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/detail_item_showmore" />
+
+                <TextView
+                    android:id="@+id/detail_item_castandcrew_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Cast &amp; Crew"
+                    android:textColor="@color/the_blue_dark5"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/detail_item_image_backdrop"
+                    app:layout_constraintTop_toBottomOf="@id/detail_item_divider02" />
+
+                <TextView
+                    android:id="@+id/detail_item_castandcrew_viewall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="View All"
+                    android:textColor="@color/the_blue"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/detail_item_divider02" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ViewFlipper>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

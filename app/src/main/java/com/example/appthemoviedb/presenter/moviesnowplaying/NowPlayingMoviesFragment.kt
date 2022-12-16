@@ -10,9 +10,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.example.appthemoviedb.databinding.FragmentNowPlayingMoviesBinding
+import com.example.appthemoviedb.presenter.moviedetails.DetailMoviesViewArg
 import com.example.appthemoviedb.presenter.moviesloadmore.MoviesLoadStateAdapter
+import com.example.appthemoviedb.presenter.viewpager.ViewPagerFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -53,7 +56,13 @@ class NowPlayingMoviesFragment : Fragment() {
     }
 
     private fun initNowPlayingMoviesAdapter() {
-        moviesNowPlayingMoviesAdapter = NowPlayingMoviesAdapter()
+        moviesNowPlayingMoviesAdapter = NowPlayingMoviesAdapter { movieId ->
+            val directions = ViewPagerFragmentDirections
+                .actionViewPagerFragmentToDetailMoviesFragment(DetailMoviesViewArg(movieId))
+
+            findNavController().navigate(directions)
+        }
+
         with(binding.recyclerMoviesNowPlaying) {
             scrollToPosition(0)
             setHasFixedSize(true)
@@ -67,23 +76,23 @@ class NowPlayingMoviesFragment : Fragment() {
         lifecycleScope.launch {
             moviesNowPlayingMoviesAdapter.loadStateFlow.collectLatest { loadState ->
                 binding.flipperMoviesNowPlaying.displayedChild =
-                when (loadState.refresh) {
-                    is LoadState.Loading -> {
-                        setShimmerVisibility(true)
-                        FLIPPER_CHILD_LOADING
-                    }
-                    is LoadState.NotLoading -> {
-                        setShimmerVisibility(false)
-                        FLIPPER_CHILD_SUCCESS
-                    }
-                    is LoadState.Error -> {
-                        setShimmerVisibility(false)
-                        binding.includeViewMoviesErrorState.buttonRetry.setOnClickListener {
-                            moviesNowPlayingMoviesAdapter.refresh()
+                    when (loadState.refresh) {
+                        is LoadState.Loading -> {
+                            setShimmerVisibility(true)
+                            FLIPPER_CHILD_LOADING
                         }
-                        FLIPPER_CHILD_ERROR
+                        is LoadState.NotLoading -> {
+                            setShimmerVisibility(false)
+                            FLIPPER_CHILD_SUCCESS
+                        }
+                        is LoadState.Error -> {
+                            setShimmerVisibility(false)
+                            binding.includeViewMoviesErrorState.buttonRetry.setOnClickListener {
+                                moviesNowPlayingMoviesAdapter.refresh()
+                            }
+                            FLIPPER_CHILD_ERROR
+                        }
                     }
-                }
             }
         }
     }
@@ -101,5 +110,10 @@ class NowPlayingMoviesFragment : Fragment() {
         private const val FLIPPER_CHILD_LOADING = 0
         private const val FLIPPER_CHILD_SUCCESS = 1
         private const val FLIPPER_CHILD_ERROR = 2
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

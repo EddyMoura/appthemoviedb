@@ -10,15 +10,16 @@
     <string name="menu_search">Search</string>
     <string name="menu_sort">Sort</string>
 
-    <string name="error_loading_movies">Error when trying to load Movies</string>
+    <string name="error_loading_data">Error when trying to load data</string>
     <string name="error_loading_more_try_again">Error when trying to load next page. Try again.</string>
     <string name="common_try_again">TRY AGAIN</string>
 
     <string name="view_pager_screen_title">The Movie DB</string>
+    <string name="details_screen_title">Movie Detail</string>
     <string name="now_playing_screen_title">Now Playing</string>
     <string name="coming_soon_screen_title">Coming Soon</string>
     <string name="favorites_screen_title">Favorites</string>
-    <string name="characters_no_results_found">No results found</string>
+    <string name="common_no_results_found">No results found</string>
 
     <string name="details_comics_category">Comics</string>
 

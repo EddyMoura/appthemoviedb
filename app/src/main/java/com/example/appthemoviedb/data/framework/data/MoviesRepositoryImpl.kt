@@ -1,4 +1,4 @@
-package com.example.appthemoviedb.data.framework
+package com.example.appthemoviedb.data.framework.data
 
 import androidx.paging.PagingSource
 import com.example.appthemoviedb.data.framework.paging.MoviesPagingSource

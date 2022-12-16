@@ -103,4 +103,9 @@ class ComingSoonMoviesFragment : Fragment() {
         private const val FLIPPER_CHILD_ERROR = 2
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
 }

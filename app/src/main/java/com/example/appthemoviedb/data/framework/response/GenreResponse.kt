@@ -1,9 +1,8 @@
 package com.example.appthemoviedb.data.framework.response
 
-
 import com.google.gson.annotations.SerializedName
 
-data class Genre(
+data class GenreResponse(
     @SerializedName("id")
     val id: Int,
     @SerializedName("name")

@@ -17,5 +17,5 @@ interface UseCaseModule {
     fun bindGetNowPlayingMoviesUseCase(useCaseImpl: GetNowPlayingMoviesUseCaseImpl): GetNowPlayingMoviesUseCase
 
     @Binds
-    fun bindGetMovieDetails(useCaseImpl: GetMovieDetailsUseCase): GetMovieDetailsUseCase
+    fun bindGetMovieDetails(useCaseImpl: GetMovieDetailsUseCaseImp): GetMovieDetailsUseCase
 }

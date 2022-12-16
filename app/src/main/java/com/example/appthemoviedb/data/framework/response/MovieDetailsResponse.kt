@@ -1,5 +1,6 @@
 package com.example.appthemoviedb.data.framework.response
 
+import com.example.appthemoviedb.domain.model.Genre
 import com.example.appthemoviedb.domain.model.MovieDetails
 import com.google.gson.annotations.SerializedName
 
@@ -36,6 +37,11 @@ fun MovieDetailsResponse.toMovieDetailsModel(): MovieDetails {
     return MovieDetails(
         id = this.id,
         overview = this.overview,
-        backdropPath
+        backdropPath,
+        releaseDate = this.releaseDate,
+        title = this.title,
+        voteAverage = this.voteAverage,
+        runtime = this.runtime,
+        genres = genres.map { it.name }
     )
 }
