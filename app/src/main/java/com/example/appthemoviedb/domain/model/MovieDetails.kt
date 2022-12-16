@@ -1,18 +1,15 @@
 package com.example.appthemoviedb.domain.model
 
-data class Movie(
-    val posterPath: String?,
-    val backdropPath: String?,
-    val overview: String?,
-    val releaseDate: String?,
+data class MovieDetails(
     val id: Int,
+    val overview: String,
+    val backdropPath: String?,
+    val releaseDate: String,
     val title: String,
     val voteAverage: Double,
-    val genres: List<Int>,
+    val runtime: Int,
+    val genres: List<String>,
 ) {
-
-    fun getFullPosterPath() =
-        if (posterPath.isNullOrBlank()) null else BASE_IMAGE_URL + posterPath
 
     fun getFullBackdropPath() =
         if (backdropPath.isNullOrBlank()) null else BASE_IMAGE_URL + backdropPath
@@ -21,4 +18,3 @@ data class Movie(
         const val BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500"
     }
 }
-

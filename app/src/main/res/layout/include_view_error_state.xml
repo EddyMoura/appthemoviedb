@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:fontFamily="@font/poppins"
-        android:text="@string/error_loading_movies"
+        android:text="@string/error_loading_data"
         android:textAlignment="center"
         android:textSize="28sp"
         app:drawableTopCompat="@drawable/ic_dissatisfied" />

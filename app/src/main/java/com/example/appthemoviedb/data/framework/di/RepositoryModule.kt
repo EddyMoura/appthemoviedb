@@ -1,8 +1,7 @@
 package com.example.appthemoviedb.data.framework.di
 
-import com.example.appthemoviedb.data.framework.MoviesRepositoryImpl
+import com.example.appthemoviedb.data.framework.data.MoviesRepositoryImpl
 import com.example.appthemoviedb.data.framework.remote.RetrofitMoviesDataSource
-import com.example.appthemoviedb.data.framework.response.DataContainerResponse
 import com.example.appthemoviedb.domain.repository.MoviesRemoteDataSource
 import com.example.appthemoviedb.domain.repository.MoviesRepository
 import dagger.Binds
@@ -15,10 +14,11 @@ import dagger.hilt.components.SingletonComponent
 interface RepositoryModule {
 
     @Binds
-    fun bindMovieRepository(repository: MoviesRepositoryImpl): MoviesRepository
+    fun bindMoviesRepository(repository: MoviesRepositoryImpl): MoviesRepository
 
     @Binds
-    fun bindRemoteDataSource(
+    fun bindMovieRemoteDataSource(
         dataSource: RetrofitMoviesDataSource
-    ): MoviesRemoteDataSource<DataContainerResponse>
+    ): MoviesRemoteDataSource
+
 }
