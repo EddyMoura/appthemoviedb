@@ -5,7 +5,7 @@ import com.example.appthemoviedb.data.framework.response.toMovieDetailsModel
 import com.example.appthemoviedb.data.framework.response.toMovieModel
 import com.example.appthemoviedb.domain.model.MovieDetails
 import com.example.appthemoviedb.domain.model.MoviePaging
-import com.example.appthemoviedb.domain.repository.MoviesRemoteDataSource
+import com.example.appthemoviedb.domain.data.repository.MoviesRemoteDataSource
 import javax.inject.Inject
 
 class RetrofitMoviesDataSource @Inject constructor(

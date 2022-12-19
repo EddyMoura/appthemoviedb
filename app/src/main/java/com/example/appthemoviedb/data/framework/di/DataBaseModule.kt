@@ -2,7 +2,7 @@ package com.example.appthemoviedb.data.framework.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.appthemoviedb.data.framework.data.DbConstants
+import com.example.appthemoviedb.data.framework.db.DbConstants
 import com.example.appthemoviedb.data.framework.db.AppDataBase
 import dagger.Module
 import dagger.Provides

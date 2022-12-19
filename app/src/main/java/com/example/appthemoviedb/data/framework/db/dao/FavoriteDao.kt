@@ -1,7 +1,12 @@
 package com.example.appthemoviedb.data.framework.db.dao
 
-import androidx.room.*
-import com.example.appthemoviedb.data.framework.data.DbConstants
+
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import com.example.appthemoviedb.data.framework.db.DbConstants
 import com.example.appthemoviedb.data.framework.db.entity.FavoriteEntity
 import kotlinx.coroutines.flow.Flow
 

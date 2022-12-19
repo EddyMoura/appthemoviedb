@@ -1,7 +1,7 @@
 package com.example.appthemoviedb.domain.usecase
 
 import com.example.appthemoviedb.domain.model.MovieDetails
-import com.example.appthemoviedb.domain.repository.MoviesRepository
+import com.example.appthemoviedb.domain.data.repository.MoviesRepository
 import com.example.appthemoviedb.domain.usecase.base.ResultStatus
 import com.example.appthemoviedb.domain.usecase.base.UseCase
 import kotlinx.coroutines.flow.Flow

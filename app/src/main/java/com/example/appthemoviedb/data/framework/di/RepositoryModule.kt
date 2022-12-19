@@ -1,9 +1,9 @@
 package com.example.appthemoviedb.data.framework.di
 
-import com.example.appthemoviedb.data.framework.data.MoviesRepositoryImpl
+import com.example.appthemoviedb.data.framework.MoviesRepositoryImpl
 import com.example.appthemoviedb.data.framework.remote.RetrofitMoviesDataSource
-import com.example.appthemoviedb.domain.repository.MoviesRemoteDataSource
-import com.example.appthemoviedb.domain.repository.MoviesRepository
+import com.example.appthemoviedb.domain.data.repository.MoviesRemoteDataSource
+import com.example.appthemoviedb.domain.data.repository.MoviesRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

@@ -1,11 +1,11 @@
-package com.example.appthemoviedb.data.framework.data
+package com.example.appthemoviedb.data.framework
 
 import androidx.paging.PagingSource
 import com.example.appthemoviedb.data.framework.paging.MoviesPagingSource
 import com.example.appthemoviedb.domain.model.Movie
 import com.example.appthemoviedb.domain.model.MovieDetails
-import com.example.appthemoviedb.domain.repository.MoviesRemoteDataSource
-import com.example.appthemoviedb.domain.repository.MoviesRepository
+import com.example.appthemoviedb.domain.data.repository.MoviesRemoteDataSource
+import com.example.appthemoviedb.domain.data.repository.MoviesRepository
 import javax.inject.Inject
 
 class MoviesRepositoryImpl @Inject constructor(

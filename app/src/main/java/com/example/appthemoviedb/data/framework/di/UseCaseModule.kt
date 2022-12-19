@@ -1,6 +1,12 @@
 package com.example.appthemoviedb.data.framework.di
 
-import com.example.appthemoviedb.domain.usecase.*
+
+import com.example.appthemoviedb.domain.usecase.GetComingSoonMoviesUseCase
+import com.example.appthemoviedb.domain.usecase.GetComingSoonMoviesUseCaseImpl
+import com.example.appthemoviedb.domain.usecase.GetMovieDetailsUseCase
+import com.example.appthemoviedb.domain.usecase.GetMovieDetailsUseCaseImp
+import com.example.appthemoviedb.domain.usecase.GetNowPlayingMoviesUseCase
+import com.example.appthemoviedb.domain.usecase.GetNowPlayingMoviesUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

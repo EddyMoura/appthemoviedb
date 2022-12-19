@@ -1,4 +1,4 @@
-package com.example.appthemoviedb.domain.repository
+package com.example.appthemoviedb.domain.data.repository
 
 import com.example.appthemoviedb.domain.model.MovieDetails
 import com.example.appthemoviedb.domain.model.MoviePaging
